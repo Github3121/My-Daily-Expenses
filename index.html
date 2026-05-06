@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Daily Expenses</title>
+    <!-- Tailwind CSS CDN -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://api.besttutor.xyz/uploads/message-image/messages-1761213240.png"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 font-sans min-h-screen p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto">
+      <header class="text-center mb-8">
+        <h1 id="h1" class="text-4xl font-extrabold text-indigo-700 anima11">
+          Daily expense calculation
+        </h1>
+        <hr />
+        <p class="text-gray-600 mt-1 anima12" id="p2">
+          It was created by
+          <strong><em class="nam">Md. Joyhanul Islam</em></strong
+          >.
+        </p>
+      </header>
+      <div class="grid grid-cols-1 gap-8 justify-center items-center">
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg h-fit expense-form-container reveal-element hoverite"
+          style="border: 1px solid #e0e0e0"
+          id="cont1"
+        >
+          <h2
+            id="h2"
+            class="text-2xl font-semibold text-gray-800 mb-6 border-b pb-2"
+          >
+            Add New Expense
+          </h2>
+          <form id="expenseForm" class="space-y-4">
+            <div>
+              <label
+                for="itemName"
+                class="block text-sm font-medium text-gray-700"
+                >Item Name*</label
+              >
+              <input
+                type="text"
+                id="itemName"
+                name="ItemName"
+                required
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                style="
+                  background-color: rgba(255, 255, 255, 0.3);
+                  backdrop-filter: blur(10px);
+                  -webkit-backdrop-filter: blur(10px);
+                  color: gray;
+                  font-family: Courier New;
+                "
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="itemQuantity"
+                  class="block text-sm font-medium text-gray-700"
+                  >Quantity*</label
+                >
+                <input
+                  type="number"
+                  id="itemQuantity"
+                  name="Quantity"
+                  required
+                  min="0.01"
+                  step="0.01"
+                  value="1"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  style="
+                    background-color: rgba(255, 255, 255, 0.3);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    color: gray;
+                  "
+                />
+              </div>
+              <div>
+                <label
+                  for="itemPrice"
+                  class="block text-sm font-medium text-gray-700"
+                  >Unit Price - TK*</label
+                >
+                <input
+                  type="number"
+                  id="itemPrice"
+                  name="UnitPrice"
+                  required
+                  min="0.01"
+                  step="0.01"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  style="
+                    background-color: rgba(255, 255, 255, 0.3);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    color: gray;
+                  "
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="itemLocation"
+                class="block text-sm font-medium text-gray-700"
+                >Location or Shop</label
+              >
+              <input
+                type="text"
+                id="itemLocation"
+                name="Location"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                style="
+                  background-color: rgba(255, 255, 255, 0.3);
+                  backdrop-filter: blur(10px);
+                  -webkit-backdrop-filter: blur(10px);
+                  color: gray;
+                "
+              />
+            </div>
+            <div>
+              <label
+                for="itemDetails"
+                class="block text-sm font-medium text-gray-700"
+                >Details - Optional</label
+              >
+              <textarea
+                id="itemDetails"
+                name="Details"
+                rows="2"
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                style="
+                  background-color: rgba(255, 255, 255, 0.3);
+                  backdrop-filter: blur(10px);
+                  -webkit-backdrop-filter: blur(10px);
+                  color: gray;
+                "
+              ></textarea>
+            </div>
+            <div id="msg" style="display: none"></div>
+            <button
+              type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white hover:text-white focus:outline-none focus:ring-2 bg-[#4C997A] hover:bg-[#148555]"
+              style="font-family: Courier New; font-weight: bold"
+              onclick="tapToRefresh()"
+            >
+              Add Expense
+            </button>
+          </form>
+        </div>
+        <div class="lg:col-span-1 space-y-8">
+          <!-- Daily Total Card -->
+          <div
+            class="bg-[#148555] text-white p-6 rounded-xl shadow-xl reveal-element hoverite"
+          >
+            <h3 class="text-xl font-medium mb-2">Total Cost</h3>
+            <span id="loading" class="loading loading-bars loading-lg hidden"></span>
+            <div
+              id="dailyTotalDisplay"
+              class="text-5xl font-extrabold flex items-baseline"
+            >
+            </div>
+          </div>
+        </div>
+        <div id="scalData" class="overflow-x-auto hidden text-white rounded-xl shadow-xl reveal-element hoverite">
+          <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+            <thead class="bg-[#148555]">
+              <tr>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Date & Time</th>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Item Name</th>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Quantity</th>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Unit Price (TK)</th>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Total</th>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Location</th>
+                <th scope="col" class="px-6 py-4 font-bold text-gray-900 border-b">Details</th>
+              </tr>
+            </thead>
+            <tbody id="dataShowDisplay" class="divide-y divide-gray-100 border-t border-gray-100">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="script.js">
+    </script>
+    <script src="script-1.js">
+    </script>
+  </body>
+</html>

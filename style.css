@@ -1,0 +1,182 @@
+* {
+  font-family: "Hind Siliguri", sans-serif;
+}
+body {
+        background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+      }
+      /* Custom scrollbar for better aesthetics */
+      .expense-list::-webkit-scrollbar {
+        width: 6px;
+      }
+      .expense-list::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1; /* slate-300 */
+        border-radius: 3px;
+      }
+      .expense-list::-webkit-scrollbar-track {
+        background: #f1f5f9; /* slate-100 */
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* --- Print Media Styles (PDF/Printer Output) --- */
+      /* ------------------------------------------------------------------ */
+      @media print {
+        /* 1. Hide the entire main app content container */
+        body > div.max-w-4xl {
+          display: none !important;
+        }
+
+        /* 2. Show the dedicated print report container */
+        #printReport {
+          display: block !important;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        /* 3. Ensure background colors print correctly for the Total Summary */
+        .print-total-summary {
+          background-color: #e0f2fe !important; /* Force light blue background */
+          border: 2px solid #4f46e5 !important;
+          color: #1e3a8a !important;
+        }
+
+        /* Clean table styles for printing */
+        #printReport table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1rem;
+          font-size: 10pt;
+        }
+        #printReport th,
+        #printReport td {
+          border: 1px solid #ddd;
+          padding: 8px 10px;
+          text-align: left;
+        }
+        #printReport th {
+          background-color: #f2f2f2 !important;
+          font-weight: bold;
+        }
+      }
+
+      /* Hide the print report by default */
+      #printReport {
+        display: none;
+      }
+      .scrolling-container {
+        width: 100%; /* Or a specific width */
+        overflow: hidden; /* Hide overflowing content */
+        white-space: nowrap; /* Prevent text from wrapping */
+        box-sizing: border-box;
+      }
+      .scrolling-text {
+        display: inline-block; /* Essential for animation */
+        padding-left: 100%; /* Start text off-screen to the right */
+        animation: scrollText 15s linear infinite; /* Apply animation */
+      }
+
+      @keyframes scrollText {
+        0% {
+          transform: translate(0, 0); /* Start position */
+        }
+        100% {
+          transform: translate(-100%, 0); /* End position (move left) */
+        }
+      }
+      .reveal-element {
+        animation: 1s ease-in 2s scroll;
+      }
+
+      /* 2. Define the final revealed state (Slide Up to normal position) */
+      @keyframes scroll {
+        from {
+          opacity: 0;
+          transform: translateY(10%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .anima11 {
+        animation: 1s ease-in 2s x2;
+      }
+      @keyframes x2 {
+        from {
+          opacity: 0;
+          transform: translateX(-10%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      .anima12 {
+        animation: 1s ease-in 2s x21;
+      }
+      @keyframes x21 {
+        from {
+          opacity: 0;
+          transform: translateX(10%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      .nam {
+        transition: 0.5s;
+      }
+      .nam:hover {
+        color: white;
+      }
+      .hoverite {
+        transition: 2s;
+      }
+      .hoverite:hover {
+        transform: translateY(1%) scale(1.01);
+        box-shadow: 0px 0px 10px rgb(169, 169, 169);
+        border-radius: 20px;
+      }
+      #h1 {
+        color: transparent; /* Makes the text fill transparent */
+        -webkit-text-stroke-width: 1px; /* Sets the border width */
+        -webkit-text-stroke-color: white; /* Sets the border color to white */
+        letter-spacing: 2px;
+        font-family: Courier New;
+        transition: 1s;
+      }
+      #h1:hover {
+        letter-spacing: 3px;
+        color: white;
+      }
+      #p1,
+      #p2 {
+        color: gray;
+        font-family: Courier New;
+        transition: 1s;
+      }
+      #p1:hover,
+      #p2:hover {
+        transform: scale(1.01);
+        color: rgb(137, 141, 137);
+      }
+      #cont1 {
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      #h2 {
+        font-family: Courier New;
+        font-size: 2em;
+        font-weight: bold;
+        color: #333;
+        text-align: left;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.2em;
+      }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
